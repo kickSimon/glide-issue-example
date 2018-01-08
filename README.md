@@ -2,7 +2,8 @@
 
 This is just a quick test to demonstrate an issue with Glide.  
 
-- Add `glide-test.local` to your host file 
+- Add `glide-test.local` to your host file
+- Run `composer install` from inside './www'
 - Run `docker-compose up`
 - Browse to the site
  
