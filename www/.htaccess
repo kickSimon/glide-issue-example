@@ -1,0 +1,16 @@
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    AddType application/font-woff .woff
+    #REWRITE RULES
+    #---------------------
+
+    # RULE IMPORTED RULE 1
+    RewriteCond %{HTTP_HOST} !^www\..*
+    RewriteCond %{HTTP_HOST} !^$
+    RewriteCond %{HTTP_HOST} ^([^.]*)\.(uk.com|com|org|net)
+    RewriteRule ^.*$ http://www.%1.%2{URL} [r=301,L]
+
+    # RULE IMAGE CACHE
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteRule ^assets/(.*)$ glide/generate.php?url=$1 [L,QSA]
+</IfModule>

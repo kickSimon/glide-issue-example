@@ -1,0 +1,4 @@
+.idea
+.env
+www/vendor/
+www/glide/cache/*
